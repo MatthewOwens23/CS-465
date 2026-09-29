@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
 
+// Connect to MongoDB
+require('./app_api/models/db');
+
 const app = express();
 const port = 3000;
 
@@ -20,7 +23,10 @@ app.set('view engine', 'hbs');
 
 // Routes
 const router = require('./app_server/routes');
+const apiRouter = require('./app_api/routes');
+
 app.use('/', router);
+app.use('/api', apiRouter);
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
