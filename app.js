@@ -7,6 +7,17 @@ require('./app_api/models/db');
 const app = express();
 const port = 3000;
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Allow CORS requests from the Angular admin site
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    next();
+});
+
 // Set up Handlebars
 const { engine } = require('express-handlebars');
 
