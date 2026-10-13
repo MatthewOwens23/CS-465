@@ -1,1 +1,7 @@
+
+<div class="app-header" *ngIf="isLoggedIn()">
+  <span>Travlr Getaways Admin</span>
+  <button type="button" (click)="logout()">Log Out</button>
+</div>
+
 <router-outlet></router-outlet>

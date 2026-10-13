@@ -1,0 +1,22 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #287f8e;
+  color: white;
+}
+
+.app-header button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  color: #287f8e;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.app-header button:hover {
+  background-color: #e8f4f6;
+}
